@@ -1,0 +1,9 @@
+#news {
+  padding: 40px 0;
+}
+#news h4::after {
+  content: '';
+  width: 10px;
+  height: 10px;
+  border: 1px solid;
+}

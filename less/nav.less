@@ -1,0 +1,53 @@
+/* 导航条的less样式 */
+
+#nav {
+    background-color: #fff;
+    /* 注意给大容器写死高度 移动端点击展不开 移动端高度不是高度 */
+    /* height: 80px; */
+    margin-bottom: 0;
+    /* 加了吸顶固定定位 没有宽度了 设置默认宽度 */
+    width: 100%;
+    /* 设置层级不会被人盖住 */
+    z-index: 999;
+    /* 默认没有设置top 导航条原来在哪里就是哪里 设置top 0到最顶上 */
+    top: 0;
+    .navbar-header {
+        .navbar-toggle {
+            margin-top: 23px;
+        }
+        .navbar-brand {
+            height: 80px;
+            /* 因为导航条里a有默认上下15px的padding 内容减少30px 行高 80 - 30 == 50px */
+            line-height: 50px;
+            i {
+                /* 注意给i设置字体 防止个人中心掉下来 */
+                font-size: 30px;
+                &.icon-icon {
+                    color: @main-color;
+                }
+                &.icon-logo {
+                    color: #333;
+                }
+            }
+        }
+    }
+    .navbar-collapse {
+        .navbar-nav {
+            li {
+                a {
+                    height: 80px;
+                    line-height: 50px;
+                    &:hover {
+                        border-bottom: 2px solid @main-color;
+                    }
+                }
+                &.active {
+                    a {
+                        border-bottom: 2px solid @main-color;
+                        background-color: #fff;
+                    }
+                }
+            }
+        }
+    }
+}

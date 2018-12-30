@@ -1,0 +1,11 @@
+#slide {
+  /* 大图 设置背景图定位居中 */
+}
+#slide .large-image {
+  background-position: center center;
+  height: 410px;
+  width: 100%;
+}
+#slide .small-image img {
+  width: 100%;
+}

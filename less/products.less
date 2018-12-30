@@ -1,0 +1,133 @@
+#products {
+    background-color: #eee;
+    padding: 40px 0;
+    .nav-tabs {
+        li {
+            &.active {
+                a {
+                    /* 透明背景色 */
+                    background-color: transparent;
+                    border-bottom: 3px solid @main-color;
+                }
+            }
+            a {
+                /* 注意所有a都有边框 把所有a都去掉 */
+                border: 0;
+                border-bottom: 3px solid transparent;
+                color: #666;
+                font-size: 16px;
+            }
+        }
+    }
+    .tab-content {
+        .product {
+            background-color: #fff;
+            margin-top: 20px;
+            display: flex;
+            position: relative;
+            &.active {
+                background-color: @main-color;
+                color: #fff;
+                &::before {
+                    /* 指定当前图标的编码 */
+                    content: "\e915";
+                    /* 指定图标的字体 */
+                    font-family: 'itcast';
+                    font-size: 30px;
+                    position: absolute;
+                    top: -6px;
+                }
+            }
+            .product-left {
+                flex: 1;
+                /* 给商品的左边的盒子设置一个内边距15px 为了让里面 row的margin-left的负值和product-left盒子的padding抵消 */
+                padding: 15px;
+                h4 {
+                    text-align: center;
+                }
+                .row {
+                    div {
+                        margin-bottom: 10px;
+                        &:nth-child(2n) {
+                            text-align: right;
+                        }
+                        p {
+                            margin-bottom: 0;
+                        }
+                    }
+                }
+            }
+            .product-right {
+                width: 120px;
+                /* 判断如果屏幕宽度在320-339 之间设置右边盒子的宽度固定为100px */
+                @media(min-width: 320px) and (max-width:340px) {
+                    width: 100px;
+                }
+                /* 判断如果屏幕宽度在992-1200 之间设置右边盒子的宽度固定为100px */
+                @media(min-width: 992px) and (max-width:1200px) {
+                    width: 100px;
+                }
+                border-left: 1px dashed @border-color;
+                /* 给父元素相对定位 让伪元素相对right来定位 */
+                position: relative;
+                &::before,
+                &::after {
+                    content: '';
+                    width: 16px;
+                    height: 16px;
+                    border-radius: 50%;
+                    position: absolute;
+                    left: -8px;
+                    background-color: #eee;
+                }
+                &::before {
+                    top: -8px;
+                }
+                &::after {
+                    bottom: -8px;
+                }
+                /* padding-top: 54px;
+                text-align: center; */
+                display: flex;
+                /* flex布局垂直方向 */
+                flex-direction: column;
+                /* 主轴垂直 主轴居中 就是垂直居中 */
+                justify-content: center;
+                /* 侧轴是水平 侧轴居中就是水平居中 */
+                align-items: center;
+                p {
+                    margin-bottom: 0;
+                    strong {
+                        font-size: 30px;
+                    }
+                }
+                /* 工具提示添加了会影响后面的内容布局让工具提示脱标 */
+                .tooltips {
+                    position: absolute;
+                    top: 20px;
+                    width: 100%;
+                    text-align: center;
+                    /* 鼠标上移动态添加的元素 */
+                    .tooltip-inner {
+                        color: #0f0;
+                        background-color: hotpink;
+                    }
+                    /* 小箭头的颜色 */
+                    .tooltip-arrow {
+                        border-top-color: hotpink;
+                    }
+                    button {
+                        &:first-of-type {
+                            border: 1px solid #ff0;
+                            color: #ff0;
+                        }
+                        &:last-of-type {
+                            border: 1px solid #0f0;
+                            color: #0f0;
+                        }
+                    }
+                }
+            }            
+        }
+    }
+}

@@ -1,0 +1,12 @@
+#products {
+  background-color: #eee;
+  padding: 40px 0;
+}
+#products .nav-tabs li.active a {
+  /* 透明背景色 */
+  background-color: transparent;
+  border-bottom: 3px solid #000;
+}
+#products .nav-tabs li a {
+  border: 0;
+}

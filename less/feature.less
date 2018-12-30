@@ -1,0 +1,19 @@
+#feature{
+    // 父子之间的用padding
+    padding: 40px 0;
+    .media{
+        // 兄弟之间的间距 用margin
+        margin-bottom: 10px;
+        // 无法居中原因是左边不是普通内容 是块级元素宽度固定了
+        // text-align: center;
+        width: 210px;
+        margin: 0px auto;
+        a{
+            color:#666;
+            text-decoration: none;
+            &:hover{
+                color:@main-color;
+            }
+        }
+    }
+}

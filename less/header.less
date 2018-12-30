@@ -1,0 +1,28 @@
+/* 头部区域的样式写在header.less中 */
+
+#header {
+    border-bottom: 1px solid @border-color;
+    .row {
+        line-height: 40px;
+        div {
+            font-size: 12px;
+            a {
+                color: #666;
+                img {
+                    position: absolute;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    display: none;
+                    z-index: 1000;
+                }
+                &:hover img {
+                    display: block;
+                }
+            }
+            &~div {
+                border-left: 1px solid @border-color;
+            }
+        }
+    }
+}
+

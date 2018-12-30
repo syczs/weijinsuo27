@@ -1,0 +1,57 @@
+#news {
+    padding: 40px 0;
+    h4 {
+        position: relative;
+        border-bottom: 1px dashed @border-color;
+        line-height: 40px;
+        text-align: center;
+        &::after {
+            content: '';
+            width: 10px;
+            height: 10px;
+            border: 1px solid @border-color;
+            border-radius: 50%;
+            position: absolute;
+            right: -10px;
+            bottom: -5px;
+        }
+    }
+    .nav-tabs{
+        /* 去掉ul默认底部边框 */
+        border-bottom: 0;    
+        li{
+            /* 当屏幕宽度 小 超小屏幕 栅格已经实现了  让li平分整个ul宽度 */
+            @media(max-width:992px){
+                width: 25%;
+                a{
+                    width: 60px;
+                    height: 60px;
+                    /* a是块级元素默认有宽高和li一样  固定a为60px 设置块居中 */
+                    margin: 0px auto;
+                }
+            }
+            &.active{
+                a{
+                    background-color: @main-color;
+                }
+            }
+            a{
+                /* 因为a bootstrap设置了转块 所有有宽高 */
+                border-radius: 50%;
+                margin-bottom: 20px;
+                color:#ccc;
+                i{
+                    font-size: 30px;
+                }
+                &:hover{
+                    background-color: @main-color;
+                }
+            }
+        }
+    }
+    .tab-content{
+        .list-group-item{
+            border:0;
+        }
+    }
+}

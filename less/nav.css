@@ -1,0 +1,36 @@
+/* 导航条的less样式 */
+#nav {
+  background-color: #fff;
+  /* 注意给大容器写死高度 移动端点击展不开 移动端高度不是高度 */
+  /* height: 80px; */
+  margin-bottom: 0;
+}
+#nav .navbar-header .navbar-toggle {
+  margin-top: 23px;
+}
+#nav .navbar-header .navbar-brand {
+  height: 80px;
+  /* 因为导航条里a有默认上下15px的padding 内容减少30px 行高 80 - 30 == 50px */
+  line-height: 50px;
+}
+#nav .navbar-header .navbar-brand i {
+  /* 注意给i设置字体 防止个人中心掉下来 */
+  font-size: 30px;
+}
+#nav .navbar-header .navbar-brand i.icon-icon {
+  color: #e92322;
+}
+#nav .navbar-header .navbar-brand i.icon-logo {
+  color: #333;
+}
+#nav .navbar-collapse .navbar-nav li a {
+  height: 80px;
+  line-height: 50px;
+}
+#nav .navbar-collapse .navbar-nav li a:hover {
+  border-bottom: 2px solid #e92322;
+}
+#nav .navbar-collapse .navbar-nav li.active a {
+  border-bottom: 2px solid #e92322;
+  background-color: #fff;
+}

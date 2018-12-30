@@ -1,0 +1,306 @@
+/* 引入全局变量的less文件 */
+/* 全局变量的less 吧一些重复使用变量放到这个文件里面写 */
+/* 引入头部的less文件 */
+/* 头部区域的样式写在header.less中 */
+#header {
+  border-bottom: 1px solid #ccc;
+}
+#header .row {
+  line-height: 40px;
+}
+#header .row div {
+  font-size: 12px;
+}
+#header .row div a {
+  color: #666;
+}
+#header .row div a img {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: none;
+  z-index: 999;
+}
+#header .row div a:hover img {
+  display: block;
+}
+#header .row div ~ div {
+  border-left: 1px solid #ccc;
+}
+/* 引入导航条的less文件 */
+/* 导航条的less样式 */
+#nav {
+  background-color: #fff;
+  /* 注意给大容器写死高度 移动端点击展不开 移动端高度不是高度 */
+  /* height: 80px; */
+  margin-bottom: 0;
+  /* 加了吸顶固定定位 没有宽度了 设置默认宽度 */
+  width: 100%;
+  /* 设置层级不会被人盖住 */
+  z-index: 999;
+  /* 默认没有设置top 导航条原来在哪里就是哪里 设置top 0到最顶上 */
+  top: 0;
+}
+#nav .navbar-header .navbar-toggle {
+  margin-top: 23px;
+}
+#nav .navbar-header .navbar-brand {
+  height: 80px;
+  /* 因为导航条里a有默认上下15px的padding 内容减少30px 行高 80 - 30 == 50px */
+  line-height: 50px;
+}
+#nav .navbar-header .navbar-brand i {
+  /* 注意给i设置字体 防止个人中心掉下来 */
+  font-size: 30px;
+}
+#nav .navbar-header .navbar-brand i.icon-icon {
+  color: #e92322;
+}
+#nav .navbar-header .navbar-brand i.icon-logo {
+  color: #333;
+}
+#nav .navbar-collapse .navbar-nav li a {
+  height: 80px;
+  line-height: 50px;
+}
+#nav .navbar-collapse .navbar-nav li a:hover {
+  border-bottom: 2px solid #e92322;
+}
+#nav .navbar-collapse .navbar-nav li.active a {
+  border-bottom: 2px solid #e92322;
+  background-color: #fff;
+}
+/* 引入轮播图的less文件 */
+#slide {
+  /* 大图 设置背景图定位居中 */
+}
+#slide .large-image {
+  background-position: center center;
+  height: 410px;
+  width: 100%;
+}
+#slide .small-image img {
+  width: 100%;
+}
+/* 引入特色介绍的less文件 */
+#feature {
+  padding: 40px 0;
+}
+#feature .media {
+  margin-bottom: 10px;
+  width: 210px;
+  margin: 0px auto;
+}
+#feature .media a {
+  color: #666;
+  text-decoration: none;
+}
+#feature .media a:hover {
+  color: #e92322;
+}
+/* 引入立即预约的样式 */
+#booking {
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  padding: 20px 0;
+}
+#booking .text-danger {
+  color: #e92322;
+}
+/* 引入商品区域的样式 */
+#products {
+  background-color: #eee;
+  padding: 40px 0;
+}
+#products .nav-tabs li.active a {
+  /* 透明背景色 */
+  background-color: transparent;
+  border-bottom: 3px solid #e92322;
+}
+#products .nav-tabs li a {
+  /* 注意所有a都有边框 把所有a都去掉 */
+  border: 0;
+  border-bottom: 3px solid transparent;
+  color: #666;
+  font-size: 16px;
+}
+#products .tab-content .product {
+  background-color: #fff;
+  margin-top: 20px;
+  display: flex;
+  position: relative;
+}
+#products .tab-content .product.active {
+  background-color: #e92322;
+  color: #fff;
+}
+#products .tab-content .product.active::before {
+  /* 指定当前图标的编码 */
+  content: "\e915";
+  /* 指定图标的字体 */
+  font-family: 'itcast';
+  font-size: 30px;
+  position: absolute;
+  top: -6px;
+}
+#products .tab-content .product .product-left {
+  flex: 1;
+  /* 给商品的左边的盒子设置一个内边距15px 为了让里面 row的margin-left的负值和product-left盒子的padding抵消 */
+  padding: 15px;
+}
+#products .tab-content .product .product-left h4 {
+  text-align: center;
+}
+#products .tab-content .product .product-left .row div {
+  margin-bottom: 10px;
+}
+#products .tab-content .product .product-left .row div:nth-child(2n) {
+  text-align: right;
+}
+#products .tab-content .product .product-left .row div p {
+  margin-bottom: 0;
+}
+#products .tab-content .product .product-right {
+  width: 120px;
+  /* 判断如果屏幕宽度在320-339 之间设置右边盒子的宽度固定为100px */
+  /* 判断如果屏幕宽度在992-1200 之间设置右边盒子的宽度固定为100px */
+  border-left: 1px dashed #ccc;
+  /* 给父元素相对定位 让伪元素相对right来定位 */
+  position: relative;
+  /* padding-top: 54px;
+                text-align: center; */
+  display: flex;
+  /* flex布局垂直方向 */
+  flex-direction: column;
+  /* 主轴垂直 主轴居中 就是垂直居中 */
+  justify-content: center;
+  /* 侧轴是水平 侧轴居中就是水平居中 */
+  align-items: center;
+  /* 工具提示添加了会影响后面的内容布局让工具提示脱标 */
+}
+@media (min-width: 320px) and (max-width: 340px) {
+  #products .tab-content .product .product-right {
+    width: 100px;
+  }
+}
+@media (min-width: 992px) and (max-width: 1200px) {
+  #products .tab-content .product .product-right {
+    width: 100px;
+  }
+}
+#products .tab-content .product .product-right::before,
+#products .tab-content .product .product-right::after {
+  content: '';
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  position: absolute;
+  left: -8px;
+  background-color: #eee;
+}
+#products .tab-content .product .product-right::before {
+  top: -8px;
+}
+#products .tab-content .product .product-right::after {
+  bottom: -8px;
+}
+#products .tab-content .product .product-right p {
+  margin-bottom: 0;
+}
+#products .tab-content .product .product-right p strong {
+  font-size: 30px;
+}
+#products .tab-content .product .product-right .tooltips {
+  position: absolute;
+  top: 20px;
+  width: 100%;
+  text-align: center;
+  /* 鼠标上移动态添加的元素 */
+  /* 小箭头的颜色 */
+}
+#products .tab-content .product .product-right .tooltips .tooltip-inner {
+  color: #0f0;
+  background-color: hotpink;
+}
+#products .tab-content .product .product-right .tooltips .tooltip-arrow {
+  border-top-color: hotpink;
+}
+#products .tab-content .product .product-right .tooltips button:first-of-type {
+  border: 1px solid #ff0;
+  color: #ff0;
+}
+#products .tab-content .product .product-right .tooltips button:last-of-type {
+  border: 1px solid #0f0;
+  color: #0f0;
+}
+/* 引入新闻的区域的样式 */
+#news {
+  padding: 40px 0;
+}
+#news h4 {
+  position: relative;
+  border-bottom: 1px dashed #ccc;
+  line-height: 40px;
+  text-align: center;
+}
+#news h4::after {
+  content: '';
+  width: 10px;
+  height: 10px;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  position: absolute;
+  right: -10px;
+  bottom: -5px;
+}
+#news .nav-tabs {
+  /* 去掉ul默认底部边框 */
+  border-bottom: 0;
+}
+#news .nav-tabs li {
+  /* 当屏幕宽度 小 超小屏幕 栅格已经实现了  让li平分整个ul宽度 */
+}
+@media (max-width: 992px) {
+  #news .nav-tabs li {
+    width: 25%;
+  }
+  #news .nav-tabs li a {
+    width: 60px;
+    height: 60px;
+    /* a是块级元素默认有宽高和li一样  固定a为60px 设置块居中 */
+    margin: 0px auto;
+  }
+}
+#news .nav-tabs li.active a {
+  background-color: #e92322;
+}
+#news .nav-tabs li a {
+  /* 因为a bootstrap设置了转块 所有有宽高 */
+  border-radius: 50%;
+  margin-bottom: 20px;
+  color: #ccc;
+}
+#news .nav-tabs li a i {
+  font-size: 30px;
+}
+#news .nav-tabs li a:hover {
+  background-color: #e92322;
+}
+#news .tab-content .list-group-item {
+  border: 0;
+}
+/* 引入合作伙伴的区域的样式 */
+#partner {
+  padding: 20px 0;
+  text-align: center;
+}
+#partner a {
+  color: #666;
+}
+#partner a:hover {
+  color: #e92322;
+  text-decoration: none;
+}
+#partner a i {
+  font-size: 60px;
+}

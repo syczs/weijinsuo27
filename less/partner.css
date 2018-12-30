@@ -1,0 +1,10 @@
+#partner {
+  padding: 20px 0;
+  text-align: center;
+}
+#partner a {
+  color: #666;
+}
+#partner a i {
+  font-size: 60px;
+}

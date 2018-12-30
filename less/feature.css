@@ -1,0 +1,10 @@
+#feature {
+  padding: 40px 0;
+}
+#feature .media {
+  margin-bottom: 10px;
+}
+#feature .media a {
+  color: #666;
+  text-decoration: none;
+}

@@ -1,0 +1,35 @@
+#header {
+    border-bottom: 1px solid #ccc;
+}
+
+#header .row {
+    line-height: 40px;
+}
+
+#header .row div {
+    font-size: 12px;
+}
+
+#header .row div+div {
+    border-left: 1px solid #ccc;
+}
+
+#header .row div~div {
+    border-left: 1px solid #ccc;
+}
+
+#header .row div a {
+    color: #666;
+}
+
+#header .row div a img {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: none;
+    z-index: 999;
+}
+
+#header .row div a:hover img {
+    display: block;
+}
